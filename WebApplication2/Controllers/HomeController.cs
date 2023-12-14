@@ -40,6 +40,18 @@ namespace WebApplication2.Controllers
             return View();
         }
 
+        public ActionResult showAllUsers()
+        {
+            friendsEntities1 fe = new friendsEntities1();
+            var userList = (from a in fe.users
+                            where a.role_id == 1
+                            select a).ToList();
+
+            ViewData["UserList"] = userList;
+
+            return View();
+        }
+
         public ActionResult editProfile(FormCollection fc)
         {
 
@@ -90,18 +102,28 @@ namespace WebApplication2.Controllers
         public ActionResult staff()
         {
 
-            Response.Cache.SetCacheability(HttpCacheability.NoCache);
-            Response.Cache.SetNoStore();
-
             return View();
         }
 
         public ActionResult admin()
         {   
 
-            Response.Cache.SetCacheability(HttpCacheability.NoCache);
-            Response.Cache.SetNoStore();
             return View();
+        }
+
+        public ActionResult deleteUser(int x)
+        {
+            int id = x;
+
+            friendsEntities1 fe = new friendsEntities1();
+            user u = (from a in fe.users
+                      where a.id == id
+                      select a).FirstOrDefault();
+
+            fe.users.Remove(u);
+            fe.SaveChanges();
+
+            return RedirectToAction("showAllUsers");
         }
 
         public ActionResult logout()

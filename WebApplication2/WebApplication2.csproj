@@ -216,6 +216,7 @@
     <Content Include="Views\Home\admin.cshtml" />
     <Content Include="Views\Shared\AfterLogin.cshtml" />
     <Content Include="Views\Home\goToEdit.cshtml" />
+    <Content Include="Views\Home\showAllUsers.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

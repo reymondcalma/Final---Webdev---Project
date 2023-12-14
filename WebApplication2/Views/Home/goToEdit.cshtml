@@ -21,7 +21,7 @@
         border:1px solid black;
        flex-direction:column;
     }
-    .form input{
+    .form input, .form button{
         margin:3% 25% 1% 25%;
     }
 </style>
@@ -29,11 +29,12 @@
 
     <form class="form" method="post" action="editProfile">
         <input type="hidden" name="id" value="@user.id">
-        <input type="text" placeholder="@user.firstname" name="firstname">
-        <input type="text" placeholder="@user.lastname" name="lastname">
-        <input type="email" placeholder="@user.email" name="email">
-        <input type="text" placeholder="@user.password" name="password">
-        <input type="submit" placeholder="Submit">
+        <input type="text" value="@user.firstname" name="firstname">
+        <input type="text" value="@user.lastname" name="lastname">
+        <input type="email" value="@user.email" name="email">
+        <input type="text" value="@user.password" name="password">
+        <input type="submit" value="Submit">
+        <button>@Html.ActionLink("Cancel", "staff", "Home")</button>
     </form>
 
 </div>
