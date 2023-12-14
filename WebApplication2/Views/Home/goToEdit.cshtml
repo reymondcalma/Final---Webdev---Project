@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewBag.Title = "goToEdit";
+    Layout = "~/Views/Shared/AfterLogin.cshtml";
+
+    var user = ViewData["user"] as user;
+}
+<style>
+    .outer {
+        display: flex;
+        height: 100vh;
+        width: 100%;
+        border: 1px solid black;
+        justify-content: center;
+    }
+
+    .form{
+        width:60%;
+        display:flex;
+        flex-wrap:wrap;
+        border:1px solid black;
+       flex-direction:column;
+    }
+    .form input{
+        margin:3% 25% 1% 25%;
+    }
+</style>
+<div class="outer">
+
+    <form class="form" method="post" action="editProfile">
+        <input type="hidden" name="id" value="@user.id">
+        <input type="text" placeholder="@user.firstname" name="firstname">
+        <input type="text" placeholder="@user.lastname" name="lastname">
+        <input type="email" placeholder="@user.email" name="email">
+        <input type="text" placeholder="@user.password" name="password">
+        <input type="submit" placeholder="Submit">
+    </form>
+
+</div>

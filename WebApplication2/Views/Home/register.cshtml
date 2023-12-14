@@ -1,0 +1,59 @@
+﻿@{
+    ViewBag.Title = "register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+
+    .outer {
+        display: flex;
+        justify-content: center;
+        background-color: black;
+    }
+
+    .modal-body {
+        justify-content: center;
+        display: flex;
+        background-image: linear-gradient(to left, #b3e3f8, #26547C);
+        padding: 8% 10%;
+    }
+</style>
+
+<div class="outer">
+    <div class="modal-body">
+        <form method="post" action="insertData">
+            <h1>REGISTER</h1>
+            <input type="text" name="firstname" required placeholder="FirstName: " autocomplete="off"><br><br>
+            <input type="text" name="lastname" required placeholder="LastName: " autocomplete="off"><br><br>
+            <input type="email" name="email" required placeholder="Email: " autocomplete="off"><br><br>
+            <input type="password" name="pass" required placeholder="Password: " id="p1" onblur="passLength()"><br><br>
+            <input type="password" name="password" required placeholder="Confirm Password: " id="p2" onblur="checkPass()"><br><br>
+            <input type="submit" value="Sign up"><br><br><br>
+        </form>
+    </div>
+</div>
+<script>
+    function passLength() {
+
+        const ps1 = document.getElementById("p1").value;
+
+        if (ps1 == "") {
+
+        }
+        else if (ps1.length < 8) {
+            alert("Password too short!");
+        }
+    }
+
+    function checkPass() {
+
+        const p1 = document.getElementById("p1").value;
+        const p2 = document.getElementById("p2").value;
+
+        if (p2 == "") {
+
+        }
+        else if (p1 != p2) {
+            alert("Password Don't Match!");
+        }
+    }
+</script>

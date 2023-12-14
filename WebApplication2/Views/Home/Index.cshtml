@@ -1,0 +1,38 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<style>
+    .image {
+        background-image: url("../../Content/kid.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100vh;
+        width: 100%;
+        max-width: 120vh;
+        animation-name: fade;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+    }
+    .btn-secondary {
+        background-color: #b3e3f8;
+        border: 2px solid white;
+        color: black;
+        font-family: serif;
+        font-size: 1.5em;
+        padding: 2%;
+        text-decoration: none;
+    }
+
+        .btn-secondary:hover {
+            background-color: white;
+        }
+</style>
+<div class="body">
+    <div class="image"></div>
+    <div class="text">
+        <h1>Join us on our Activities!</h1>
+        <div class="register">
+            <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#myModal" id="register"> @Html.ActionLink("Register", "register", "Home")</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewBag.Title = "admin";
+    Layout = "~/Views/Shared/AfterLogin.cshtml";
+
+
+    var firstname = Session["first_name"] as string;
+    var lastname = Session["last_name"] as string;
+}
+<style>
+
+    .outer {
+        display: flex;
+        height: 50vh;
+        width: 100%;
+        border: 1px solid black;
+        justify-content: center;
+    }
+
+    .inner {
+        display: flex;
+        border: 1px solid black;
+        margin: 5%;
+        width: 50%;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+
+        .inner h2 {
+            border: 1px solid black;
+            padding: 2%;
+        }
+</style>
+<div class="outer">
+    <div class="inner">
+        <h1>Welcome! @firstname</h1><br>
+        <h2>@Html.ActionLink("Show All Users", "Index", "Home")</h2>
+    </div>
+</div>
+
+
